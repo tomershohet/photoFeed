@@ -1,0 +1,21 @@
+
+<ion-view view-title="Home">
+
+  <ion-content>
+    <div>
+      <div ng-repeat="x in photosFeed" >
+        <div class="photoUpper">{{x.name}}</div>
+          <ion-slide-box show-pager="false">
+            <ion-slide ng-repeat="p in x.subPhotos">
+                <img id = "{{ x.id }}" src = "{{ p.picUrl }}" style = "width:300px;height:300px;padding-top: 3px; padding-bottom: 3px;" ng-click="edit(x)">
+                  <div class="subPhotoFotter">
+                    <span class="title">{{ x.subPhotos[0].title }}</span><br>
+                    <span class="likes" ng-repeat="y in p.likes">{{$first ? "Likes: " : ""}}{{ y }}{{!$last ? ", " : ""}}</span><br>
+                    <span class="tags" ng-repeat="y in p.tags">{{$first ? "Tags: " : ""}}{{"#" + y}}{{!$last ? ", " : ""}}</span>
+                  </div>
+            </ion-slide>
+          </ion-slide-box>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
