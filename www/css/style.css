@@ -1,7 +1,16 @@
 /* Empty. Add your own CSS if you like */
+
+@font-face {
+    font-family: 'Pacifico';
+    src:url('../fonts/Pacifico.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .slider {
   height: 100%;
 }
+
 .slider-slide {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -9,12 +18,37 @@
   background-color: #fff;
   text-align: center;
 
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 }
 
-.photoUpper {
-	text-align: center;
-	padding-top: 0px;
-	padding-bottom: 0px;
+.slider-pager {
+  padding-top: 0px;
+  color: #000;
+  text-align: center;
+
+  font-family:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+.editedBy{
+	position: relative;
+	float:right; 
+	padding-right:0px;
+}
+
+.editedByText{
+  font-family: "Pacifico";
+	font-size: 22px;
+	position: absolute; 
+	bottom: 15px; 
+	right: 34px;
+}
+
+.profilePic{
+	width:25px;
+	height:25px;
+	position: absolute; 
+	bottom: 0; 
+	left: 0;
 }
