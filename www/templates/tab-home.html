@@ -1,25 +1,25 @@
 
-<ion-view view-title="Home">
+<ion-view view-title="Home" loaded="test()">
 
-  <ion-content>
+  <ion-content on-scroll-complete="onScrollY(scrollTop, scrollLeft)" >
     <div>
       <div ng-repeat="x in photosFeed" >
-        <div style="margin: 0 auto; text-align:left; max-width:350px; width:100%;">
+        <div style="margin: 0 auto; text-align:left; max-width:550px; width:100%;">
           <div class="photoUpper" style="height:30px;position: relative;">
             <img src = "{{ x.profilePic }}" class="profilePic">
             <span class="userName" style="position: absolute; bottom: 0; left: 28px;">{{ x.name }}</span>
             <span class="shootTime" style="position: absolute; bottom: 0; right: 0px;">{{ x.shootTime }}</span>            
           </div>
-          <ion-slide-box active-slide="myActiveSlide" style="width:100%;padding-bottom: 40px;" on-tap="">
-            <ion-slide ng-repeat="p in x.subPhotos">
-                <img id = "{{ x.id }}" src = "{{ p.picUrl }}" style = "width:100%; max-height:800px;padding-top: 2px; padding-bottom: 0px;" on-double-tap="like(p)">
-                      <div style="text-align:left;line-height:15px;">
+          <ion-slide-box style="width:100%;padding-bottom: 40px;" pager-click="updateSlide(index)">
+            <ion-slide ng-repeat="p in x.subPhotos" id= "Tomer1" on-tap="nextSlide()">
+                <img src = "{{ p.picUrl }}" style = "width:100%; max-height:800px;padding-top: 2px; padding-bottom: 0px;" on-double-tap="like(p)" >
+                      <div style="text-align:left;line-height:15px; padding-left: 2px; padding-right: 2px;">
                         <span class="title">{{ p.title }}</span>
                         <span class="editedBy">
                             <span class="editedByText">{{ p.editedBy }}</span>
                             <img src = "{{ p.profilePic }}" style="width:25px; height:25px;">
                         </span>
-                        <div style="padding-top:8px;"></div><br>
+                        <div style="padding-top:8px; padding-left: 2px; padding-right: 2px;"></div><br>
                         <a class='{{ p.liked ? "ion-ios-heart" : "ion-ios-heart-outline"}}'></a>
                         <span class="likes" ng-repeat="y in p.likes">{{ y }}{{!$last ? ", " : ""}}</span><br>
                         <span class="tags" ng-repeat="y in p.tags">{{"#" + y}}{{!$last ? ", " : ""}}</span>
