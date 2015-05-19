@@ -11,7 +11,7 @@
             <span class="shootTime" style="position: absolute; bottom: 0; right: 0px;">{{ x.shootTime }}</span>            
           </div>
           <ion-slide-box style="width:100%;padding-bottom: 40px;" pager-click="updateSlide(index)">
-            <ion-slide ng-repeat="p in x.subPhotos" id= "Tomer1" on-tap="nextSlide()">
+            <ion-slide ng-repeat="p in x.subPhotos" on-tap="nextSlide()">
                 <img src = "{{ p.picUrl }}" style = "width:100%; max-height:800px;padding-top: 2px; padding-bottom: 0px;" on-double-tap="like(p)" >
                       <div style="text-align:left;line-height:15px; padding-left: 2px; padding-right: 2px;">
                         <span class="title">{{ p.title }}</span>
